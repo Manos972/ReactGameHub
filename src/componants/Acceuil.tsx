@@ -15,13 +15,11 @@ function Acceuil() {
                 gridTemplateRows={'50px 1fr 30px'}
                 h='200px'
                 gap='1'
-                color='whitesmoke'
                 fontWeight='bold'
             >
 
                 <GridItem pl='2' area={'nav'}>
-                    <NavBar>
-                    </NavBar>
+                    <NavBar></NavBar>
                 </GridItem>
                 <Show above="lg">
                     <GridItem pl='2' bg='red.300' area={'aside'}>
