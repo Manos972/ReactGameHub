@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import apiClient from "../services/api-client.tsx";
+import apiClient from "../services/api-client.ts";
 import {CanceledError} from "axios";
 
 export interface Platform {
