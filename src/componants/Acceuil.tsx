@@ -23,7 +23,7 @@ function Acceuil() {
                         Aside
                     </GridItem>
                 </Show>
-                <GridItem pl='2' area={'main'}>
+                <GridItem pl="2" mr="4" area={"main"}>
                     <GameGrid/>
                 </GridItem>
             </Grid>
