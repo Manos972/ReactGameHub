@@ -1,28 +1,33 @@
-import {Grid, GridItem} from '@chakra-ui/react'
+import {Grid, GridItem, Show} from '@chakra-ui/react'
+import NavBar from "./NavBar.tsx";
 
 function Acceuil() {
     return (
-        <div>
+
             <Grid
-                templateAreas={`"nav nav"
-                  "aside main"
-                  "aside footer"`}
+                templateAreas={{
+                    base: `"nav" "main" "footer"`,
+                    lg: `"nav nav"
+                        "aside main"
+                        "aside main"
+                        "footer footer"`
+                }}
                 gridTemplateRows={'50px 1fr 30px'}
-                gridTemplateColumns={'150px 1fr'}
                 h='200px'
                 gap='1'
-                color='blackAlpha.700'
+                color='whitesmoke'
                 fontWeight='bold'
             >
-                <GridItem pl='2' bg='orange.300' area={'nav'}>
-                    Header
+
+                <GridItem pl='2' area={'nav'}>
+                    <NavBar>
+                    </NavBar>
                 </GridItem>
-                <GridItem pl='2' bg='pink.300' area={'nav'}>
-                    Nav
-                </GridItem>
-                <GridItem pl='2' bg='red.300' area={'aside'}>
-                    Aside
-                </GridItem>
+                <Show above="lg">
+                    <GridItem pl='2' bg='red.300' area={'aside'}>
+                        Aside
+                    </GridItem>
+                </Show>
                 <GridItem pl='2' bg='green.300' area={'main'}>
                     Main
                 </GridItem>
@@ -30,7 +35,7 @@ function Acceuil() {
                     Footer
                 </GridItem>
             </Grid>
-        </div>
+
     );
 }
 

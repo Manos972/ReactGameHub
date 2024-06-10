@@ -1,10 +1,8 @@
-import { Button} from "@chakra-ui/react";
+import Acceuil from "./componants/Acceuil.tsx";
 
 function App() {
   return (
-    <div>
-        <Button colorScheme='900'>Click me</Button>
-    </div>
+      <Acceuil></Acceuil>
   )
 }
 
