@@ -7,30 +7,24 @@ function Acceuil() {
 
             <Grid
                 templateAreas={{
-                    base: `"nav" "main" "footer"`,
-                    lg: `"nav nav"
-                        "aside main"
-                        "aside main"
-                        "footer footer"`
+                    base: `"nav" "main"`,
+                    lg  : `"nav nav" "aside main"`,
                 }}
-                gridTemplateRows={'50px 1fr 30px'}
-                gap='1'
-                fontWeight='bold'
+                templateColumns={{
+                    base: "1fr",
+                    lg  : "250px 1fr",
+                }}
             >
-
                 <GridItem pl='2' area={'nav'}>
-                    <NavBar></NavBar>
+                    <NavBar/>
                 </GridItem>
                 <Show above="lg">
-                    <GridItem pl='2' mr='4' bg='red.300' area={'aside'}>
+                    <GridItem pl="2" mr="4" area={"aside"}>
                         Aside
                     </GridItem>
                 </Show>
                 <GridItem pl='2' area={'main'}>
                     <GameGrid/>
-                </GridItem>
-                <GridItem pl='2' bg='blue.300' area={'footer'}>
-                    Footer
                 </GridItem>
             </Grid>
 
