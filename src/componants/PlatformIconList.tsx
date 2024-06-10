@@ -22,6 +22,7 @@ function PlatformIconList ( {platforms}: Props ) {
 					),
 				)
 			}
+
 		</HStack>
 	);
 }
