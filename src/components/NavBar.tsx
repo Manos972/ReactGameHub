@@ -1,4 +1,4 @@
-import {HStack, Image} from "@chakra-ui/react";
+import {Flex, Image} from "@chakra-ui/react";
 import logo from "../assets/react.svg";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput.tsx";
@@ -9,11 +9,13 @@ interface Props {
 
 function NavBar ( {onSearch}: Props ) {
     return (
-        <HStack justifyContent="space-between" mr='4'>
+        <>
+            <Flex justifyContent="space-between" mr="4">
             <Image src={logo} boxSize="50px"/>
             <SearchInput onSearch={onSearch}/>
             <ColorModeSwitch/>
-        </HStack>
+            </Flex>
+        </>
     );
 }
 
