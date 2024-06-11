@@ -1,13 +1,9 @@
 import axios from "axios";
-import dotenv from "dotenv";
 
-dotenv.config();
-
-const apiKey = process.env.API_KEY;
 
 export default axios.create( {
-	baseURL: "https://api.rawg.io/api",
-	params : {
-		key: apiKey,
-	},
+    baseURL: "https://api.rawg.io/api",
+    params : {
+        key: "99f8690ba14446de9755f754c169d9e4",
+    },
 } );
