@@ -1,6 +1,7 @@
 import useFetch from "./useFetchs.ts";
 import {GameQuery} from "../App";
-import {Genre} from "./useGenres.ts";
+
+// import {Genre} from "./useGenres.ts";
 
 export interface Platform {
     id: number,
@@ -16,14 +17,14 @@ export interface Games {
 }
 
 const useGames = ( gameQuery: GameQuery ) =>
-    useFetch<Game>(
+	useFetch<Games>(
         "/games",
         {
             params: {
                 genres   : gameQuery.genre?.id,
                 platforms: gameQuery.platform?.id,
                 ordering : gameQuery.sortOrder,
-                search   : gameQuery.searchText,
+				// search   : gameQuery.searchText,
             },
         },
         [ gameQuery ],
