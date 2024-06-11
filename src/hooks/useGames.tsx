@@ -1,4 +1,5 @@
 import useFetch from "./useFetchs.ts";
+import {Genre} from "./useGenres.tsx";
 
 export interface Platform {
     id: number,
@@ -13,9 +14,7 @@ export interface Games {
     parent_platforms: { platform: Platform }[];
 }
 
-const useGames = () => {
-    const {data: games, error, loading} = useFetch<Games[]>( "/games" );
-    return {games, error, loading};
-};
+const useGames = ( selectedGenre: Genre | null ) => useFetch<Games>( "/games", {params: {genres: selectedGenre?.id}}, [ selectedGenre?.id ] );
+
 
 export default useGames;

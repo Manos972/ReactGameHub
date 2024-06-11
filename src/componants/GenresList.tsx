@@ -1,9 +1,13 @@
-import {Text, List, ListItem, HStack, Image, Spinner} from "@chakra-ui/react";
+import {Text, List, ListItem, HStack, Image, Spinner, Button} from "@chakra-ui/react";
 import useFetch from "../hooks/useFetchs.ts";
 import {Genre} from "../hooks/useGenres.tsx";
 import getCropImageUrl from "../services/image-url.ts";
 
-function GenresList () {
+interface Props {
+	onSelectGenre: ( genre: Genre ) => void;
+}
+
+function GenresList ( {onSelectGenre}: Props ) {
 	const {data, error, loading} = useFetch<Genre>( "/genres" );
 	if ( error ) return null;
 	if ( loading ) return <Spinner/>;
@@ -14,7 +18,7 @@ function GenresList () {
 					<ListItem key={genre.id} pb="4px">
 						<HStack>
 							<Image boxSize="32px" borderRadius={8} src={getCropImageUrl( genre.image_background )}/>
-							<Text fontSize="lg">{genre.name}</Text>
+							<Button onClick={() => onSelectGenre( genre )} fontSize="lg" variant="link">{genre.name}</Button>
 						</HStack>
 					</ListItem>
 				) )}
