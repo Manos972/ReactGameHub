@@ -1,19 +1,18 @@
 import {Text, List, ListItem, HStack, Image, Spinner, Button, Heading} from "@chakra-ui/react";
-import useFetch from "../hooks/useFetchs.ts";
 import useGenres, {Genre} from "../hooks/useGenres.ts";
 import getCropImageUrl from "../services/image-url.ts";
 
 interface Props {
-	onSelectGenre: ( genre: Genre ) => void;
+	onSelectGenre: ( genre: Genre[] ) => void;
 	selectedGenre: Genre | null;
 }
 
 const GenreList = ( {selectedGenre, onSelectGenre}: Props ) => {
-	const {data, isLoading, error} = useGenres();
+	const {data, loading, error} = useGenres();
 
 	if ( error ) return <Text>{error}</Text>;
 
-	if ( isLoading ) return <Spinner/>;
+	if ( loading ) return <Spinner/>;
 
 	return (
 		<>
