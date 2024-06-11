@@ -5,9 +5,10 @@ import getCropImageUrl from "../services/image-url.ts";
 
 interface Props {
 	onSelectGenre: ( genre: Genre ) => void;
+	selectedGenre: Genre | null;
 }
 
-function GenresList ( {onSelectGenre}: Props ) {
+function GenresList ( {selectedGenre, onSelectGenre}: Props ) {
 	const {data, error, loading} = useFetch<Genre>( "/genres" );
 	if ( error ) return null;
 	if ( loading ) return <Spinner/>;
@@ -18,7 +19,7 @@ function GenresList ( {onSelectGenre}: Props ) {
 					<ListItem key={genre.id} pb="4px">
 						<HStack>
 							<Image boxSize="32px" borderRadius={8} src={getCropImageUrl( genre.image_background )}/>
-							<Button onClick={() => onSelectGenre( genre )} fontSize="lg" variant="link">{genre.name}</Button>
+							<Button fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"} onClick={() => onSelectGenre( genre )} fontSize="lg" variant="link">{genre.name}</Button>
 						</HStack>
 					</ListItem>
 				) )}
