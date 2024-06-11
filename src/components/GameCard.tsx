@@ -11,7 +11,7 @@ export interface Props {
 function GameCard ( {game}: Props ) {
 	return (
 		<Card>
-			<Image src={getCropImageUrl( game.background_image )}/>
+			<Image src={getCropImageUrl( game.background_image )} maxHeight="150px"/>
 			<CardBody>
 				<Heading fontSize="2xl">{game.name}</Heading>
 				<HStack justifyContent="space-between" spacing={2}>
