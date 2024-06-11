@@ -3,7 +3,7 @@ import useGenres, {Genre} from "../hooks/useGenres.ts";
 import getCropImageUrl from "../services/image-url.ts";
 
 interface Props {
-	onSelectGenre: ( genre: Genre[] ) => void;
+	onSelectGenre: ( genre: Genre ) => void;
 	selectedGenre: Genre | null;
 }
 
@@ -21,6 +21,7 @@ const GenreList = ( {selectedGenre, onSelectGenre}: Props ) => {
 			</Heading>
 			<List>
 				{data.map( ( genre ) => (
+
 					<ListItem key={genre.id} paddingY="5px">
 						<HStack>
 							<Image

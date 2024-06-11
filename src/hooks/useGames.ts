@@ -4,7 +4,7 @@ import {GameQuery} from "../App";
 // import {Genre} from "./useGenres.ts";
 
 export interface Platform {
-    id: number,
+    id: number;
     name: string;
     slug: string;
 }
@@ -12,8 +12,8 @@ export interface Games {
     id: number;
     name: string;
     background_image: string;
-    metacritic: number;
     parent_platforms: { platform: Platform }[];
+    metacritic: number;
     rating_top: number;
     rating: number;
 }
