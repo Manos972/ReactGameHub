@@ -6,7 +6,7 @@ function ColorModeSwitch() {
     return (
         <HStack>
             <Switch isChecked={colorMode === 'dark'} onChange={toggleColorMode}/>
-            <Text>Theme : {colorMode === 'light' ? 'Sombre' : 'Clair'}</Text>
+            <Text whiteSpace="nowrap">Theme : {colorMode === "light" ? "Sombre" : "Clair"}</Text>
         </HStack>
     );
 }
