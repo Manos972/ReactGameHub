@@ -17,7 +17,7 @@ function SearchInput ( {onSearch}: Props ) {
 		}}>
 			<InputGroup>
 				<InputLeftElement children={<BiSearch/>}/>
-				<Input ref={ref} variant="filled" placeholder="Rechercher un jeux ..." borderRadius={20} size="md"/>
+				<Input ref={ref} borderRadius={20} placeholder="Search games..." variant="filled"/>
 			</InputGroup>
 		</form>
 	);
