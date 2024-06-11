@@ -1,6 +1,6 @@
 import useFetch from "./useFetchs.ts";
 
-interface Genre {
+export interface Genre {
 	id: number;
 	name: string;
 	slug: string;
@@ -8,8 +8,8 @@ interface Genre {
 }
 
 const useGenres = () => {
-	const {data: genres, error, loading} = useFetch<Genre[]>( "/genres" );
-	return {genres, error, loading};
+	const {data, error, loading} = useFetch<Genre[]>( "/genres" );
+	return {data, error, loading};
 };
 
 export default useGenres;

@@ -1,17 +1,22 @@
-import {Text, Image} from "@chakra-ui/react";
-import useGenres from "../hooks/useGenres.tsx";
+import {Text, List, ListItem, HStack, Image} from "@chakra-ui/react";
+import useFetch from "../hooks/useFetchs.ts";
+import {Genre} from "../hooks/useGenres.tsx";
+import getCropImageUrl from "../services/image-url.ts";
 
 function GenresList () {
-	const {genres, error} = useGenres();
-
+	const {data, error} = useFetch<Genre>( "/genres" );
 	return (
 		<>
-			<ul>
-				{error && <Text>{error}</Text>}
-				{genres.map( ( genre ) => (
-					<li key={genre.id}><Image src={genre.image_background}/> {genre.name}</li>
+			<List>{error && <Text>{error}</Text>}
+				{data && data.map( ( genre ) => (
+					<ListItem key={genre.id} pb="4px">
+						<HStack>
+							<Image boxSize="32px" borderRadius={8} src={getCropImageUrl( genre.image_background )}/>
+							<Text fontSize="lg">{genre.name}</Text>
+						</HStack>
+					</ListItem>
 				) )}
-			</ul>
+			</List>
 		</>
 	);
 }
