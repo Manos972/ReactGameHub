@@ -4,7 +4,7 @@ import PlatformIconList from "./PlatformIconList.tsx";
 import CriticScore from "./CriticScore.tsx";
 import getCropImageUrl from "../services/image-url.ts";
 import Emoji from "./Emoji.tsx";
-import GameModal from "./GameModal.tsx";
+import ModalGame from "./ModalGame.tsx";
 
 export interface Props {
 	game: Games;
@@ -25,7 +25,7 @@ function GameCard ( {game}: Props ) {
 				</HStack>
 			</CardBody>
 			<Flex margin={3} justifyContent="space-between" alignItems="flex-end">
-				<GameModal game={game}></GameModal>
+				<ModalGame game={game.id}></ModalGame>
 			</Flex>
 		</Card>
 	);
