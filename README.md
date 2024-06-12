@@ -22,3 +22,9 @@ Pour commencer à développer, vous aurez besoin de Node.js et npm installés su
 ### Installation
 
 Pour installer les dépendances du projet, exécutez simplement :
+
+npm run dev
+
+### Contribuer
+Les contributions sont les bienvenues. 
+Veuillez ouvrir un problème ou une demande d'extraction pour toute contribution
